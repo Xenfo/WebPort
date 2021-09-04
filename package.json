@@ -1,13 +1,57 @@
 {
   "name": "webport",
   "version": "1.0.0",
-  "description": "Webhook payload delivery service",
+  "description": "Client for webhook payload delivery service",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": {
+    "webport": "./bin/webport.js"
   },
-  "keywords": [],
-  "author": "",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "bin",
+    "lib"
+  ],
+  "scripts": {
+    "test": "jest --coverage && standard",
+    "build": "tsc -p tsconfig.json"
+  },
+  "repository": "https://github.com/Xenfo/WebPort.git",
+  "author": "Samuel Corsi-House",
   "license": "MIT",
-  "repository": "https://github.com/Xenfo/WebPort.git"
+  "dependencies": {
+    "commander": "^7.2.0",
+    "eventsource": "^1.0.7",
+    "morgan": "^1.9.1",
+    "superagent": "^6.1.0",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@types/eventsource": "^1.1.0",
+    "@types/jest": "^26.0.23",
+    "@types/nock": "^9.3.1",
+    "@types/superagent": "^4.1.1",
+    "@types/validator": "^13.1.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.5.0",
+    "connect-sse": "^1.2.0",
+    "jest": "^24.5.0",
+    "nock": "^13.1.0",
+    "standard": "^16.0.3",
+    "supertest": "^6.1.3",
+    "ts-jest": "^24.0.1",
+    "typescript": "^4.3.2"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "keywords": [
+    "webport"
+  ]
 }
